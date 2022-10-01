@@ -1,0 +1,43 @@
+@import "../../../abstract/functions", "../../../abstract/variables", "../../../abstract/responsive";
+
+.container{
+  @include screenSize(500px,500px);
+  @include displayFlex(center, center, column);
+  @include cardShadow();
+  background: $color1;
+  .title{
+    @include typography(2vw, center, 1.4em,600);
+    padding-bottom: .5em;
+    color: $color2;
+  }
+  .form{
+    padding: 0 2em;
+    &__field{
+      @include displayFlex(center,flex-start,column);
+      &-label{
+        @include typography(1.1vw,left,1.4em,500);
+        margin-bottom: 0.5em;
+      }
+      &-input{
+        @include screenSize(100%,45px);
+        padding: .5em;
+        @include typography(1.2vw, left, 1.3em,400);
+        margin-bottom: .5em;
+      }
+    }
+    &__buttonWrapper{
+      @include screenSize(100%,auto);
+      @include displayFlex(center,center,row);
+      margin: 2vh 0;
+      &-button{
+        @include screenSize(100%,auto);
+        border: 1px solid $color6;
+        font-size: 1.2vw;
+        padding: .5em 0;
+        background-color: $color2;
+        color: $color1;
+
+      }
+    }
+  }
+}
