@@ -1,0 +1,51 @@
+@import "../../abstract/functions", "../../abstract/variables", "../../abstract/responsive";
+
+.container{
+  @include screenSize(100vw,90vh);
+  @include displayFlex(center, center, row);
+  background-color: $color3;
+  margin-top:1em;
+  @include glassEffect();
+  border-radius: 1em;
+  &__content{
+    @include screenSize(100%,auto);
+    @include displayFlex(space-evenly, center, row);
+    &-logo{
+      @include screenSize(45%,auto);
+      @include displayFlex(center, center, column);
+      .image{
+        @include screenSize(100%,auto);
+        @include displayFlex(center, flex-end, row);
+        transform: translateY(7%);
+        &-logo{
+          width:100%;
+        }
+      }
+      .title{
+        padding: 2em 3em;
+        background-color: $color1;
+        @include cardShadow();
+        border: 5px double $color1;
+        border-radius: .8em;
+        h1{
+          @include typography(5vw,center,1.4em,900);
+          color: $color5;
+        }
+      }
+
+    }
+    &-login{
+      @include screenSize(45%,auto);
+      @include displayFlex(center, center, row);
+    }
+  }
+}
+.footer{
+  @include screenSize(100vw,auto);
+  @include displayFlex(center, center, row);
+  margin-top: .8em;
+  &__copy{
+      @include typography(1vw,center,1.2em,600);
+      color: $color6;
+  }
+}
