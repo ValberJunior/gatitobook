@@ -12,7 +12,7 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    //importar os modules dos componentes que criamos
+    //importar os modules dos componentes que criamos ou queremos adc
   ],
   providers: [],
   bootstrap: [AppComponent]

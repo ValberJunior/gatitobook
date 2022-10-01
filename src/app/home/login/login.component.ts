@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ISignIn } from 'src/interfaces';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
+  //propertys
+  credential : ISignIn = {
+    user: "",
+    password:""
+  }
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  login(){
+    console.log(this.credential);
   }
 
 }
