@@ -46,12 +46,13 @@
       }
     &__field{
       @include displayFlex(center,flex-start,column);
+      margin-bottom: .5em;
       &-label{
         @include typography(21px,left,1.4em,500);
         margin-bottom: 0.5em;
         //tablet
         @include for-tablet-only{
-          font-size: 14px;
+          font-size: 15px;
         }
       }
       &-input{
