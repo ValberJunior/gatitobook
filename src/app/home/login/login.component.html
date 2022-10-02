@@ -1,6 +1,6 @@
 <section class="container">
   <h4 class="title">Login</h4>
-  <form class="form" (ngSubmit)="login()">
+  <form class="form" (ngSubmit)="login()" #LoginForm="ngForm">
     <div class="form__field">
       <label for="user" class="form__field-label">Usuário</label>
       <input
@@ -9,7 +9,13 @@
         class="form__field-input"
         [(ngModel)]="credential.userName"
         name="user"
+        #userField="ngModel"
+        required
          />
+         <app-message
+         *ngIf="userField.invalid && userField.touched"
+         message="Usuário obrigatório">
+        </app-message>
     </div>
     <div class="form__field">
       <label for="password" class="form__field-label">Senha</label>
@@ -18,10 +24,19 @@
         class="form__field-input"
         [(ngModel)]="credential.password"
         name="password"
+        #passwordField="ngModel"
+        required
          />
+         <app-message
+         *ngIf="passwordField.invalid && passwordField.touched"
+         message="Senha obrigatório">
+        </app-message>
     </div>
     <div class="form__buttonWrapper">
-      <button type="submit" class="form__buttonWrapper-button">
+      <button type="submit"
+        class="form__buttonWrapper-button"
+         [disabled]="LoginForm.invalid"
+         >
         Entrar
       </button>
     </div>
