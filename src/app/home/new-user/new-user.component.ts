@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NewUserService } from './new-user.service';
 import { UserExistsService } from './user-exists.service';
-import { lowercaseValidator } from './validators/lowercase.validator';
+import { lowercaseValidator } from './lowercase.validator';
 
 @Component({
   selector: 'app-new-user',
