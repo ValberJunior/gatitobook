@@ -3,7 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NewUserService } from './new-user.service';
 import { UserExistsService } from './user-exists.service';
 import { lowercaseValidator } from './lowercase.validator';
-
+import { SameUserAndPasswordValidator } from './userAndPassword.validator';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-new-user',
   templateUrl: './new-user.component.html',
@@ -17,7 +18,8 @@ export class NewUserComponent implements OnInit {
   constructor(
                 private formBuilder: FormBuilder,
                 private newUserService : NewUserService,
-                private userExistsService : UserExistsService
+                private userExistsService : UserExistsService,
+                private router: Router
                 ) { }
 
   //ciclo do angular que ocorre após a classe efetuar a injeção de todos os serviços e sua construção ser totalmente completa.
@@ -34,12 +36,23 @@ export class NewUserComponent implements OnInit {
       userName:['', [lowercaseValidator],
       [this.userExistsService.userAlreadyExists()]],
       password:[''],
-    })
+    },
+    {
+      validators: [SameUserAndPasswordValidator]
+    }
+    )
   }
 
   NewAccount(){
-    const newUser = this.newUserForm.getRawValue();
-    console.log(newUser);
+    if(this.newUserForm.valid){
+      const newUser = this.newUserForm.getRawValue();
+      this.newUserService.register(newUser).
+      subscribe(()=> { this.router.navigate([''])},
+      error => {
+        console.log(error)
+        }
+      )
+    }
   }
 
 

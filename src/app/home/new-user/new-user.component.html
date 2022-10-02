@@ -60,6 +60,11 @@
       class="form__field-input"
       formControlName="password"
       />
+      <app-message
+      *ngIf="newUserForm.errors?.['passwordSameUser']"
+      message="A senha deve ser diferente do usuário"
+      >
+      </app-message>
   </div>
   <div  class="form__buttonWrapper">
     <button class="form__buttonWrapper-button">
