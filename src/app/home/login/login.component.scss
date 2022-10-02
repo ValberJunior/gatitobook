@@ -7,7 +7,7 @@
   background: $color1;
   //viewport
   @include for-viewport-only{
-    @include screenSize(30vw,50vh);
+    @include screenSize(450px,450px);
   }
   //tablet(S)
   @include for-tabletS-only{
@@ -23,11 +23,11 @@
     @include screenSize(250px,350px);
   }
   .title{
-    @include typography(2vw, center, 1.4em,600);
+    @include typography(38px, center, 1.4em,600);
     padding-bottom: .5em;
     color: $color2;
-    //tablet(S)
-    @include for-tabletS-only{
+    //tablet
+    @include for-tablet-only{
       font-size: 2.6vw;
       padding: .2em 0 .5em 0;
     }
@@ -39,18 +39,18 @@
   }
   .form{
     padding: 0 2em;
-    //tablet(S)
-     @include for-tabletS-only{
+    //tablet
+     @include for-tablet-only{
       width: 100%;
       padding: 0 1.5em;
       }
     &__field{
       @include displayFlex(center,flex-start,column);
       &-label{
-        @include typography(1.1vw,left,1.4em,500);
+        @include typography(21px,left,1.4em,500);
         margin-bottom: 0.5em;
-        //tablet(S)
-        @include for-tabletS-only{
+        //tablet
+        @include for-tablet-only{
           font-size: 14px;
         }
       }
@@ -68,14 +68,14 @@
       &-button{
         @include screenSize(100%,auto);
         border: 1px solid $color6;
-        font-size: 1.2vw;
+        font-size: 23px;
         padding: .5em 0;
         background-color: $color2;
         color: $color1;
-        //tablet(S)
-        @include for-tabletS-only{
+        //tablet
+        @include for-tablet-only{
           font-size: 1.8vw;
-          padding: 1.2em 0;
+          padding: 1em 0;
         }
         //mobile
         @include for-mobile-only{
