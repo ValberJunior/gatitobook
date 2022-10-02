@@ -1,0 +1,90 @@
+@import "../../../abstract/functions", "../../../abstract/variables", "../../../abstract/responsive";
+
+.container{
+  @include screenSize(500px,500px);
+  @include displayFlex(center, center, column);
+  @include cardShadow();
+  background: $color1;
+  //tablet
+  @include for-tablet-only{
+    @include screenSize(45vw,auto);
+    padding: 1.5em 0;
+  }
+  //mobile(M)
+  @include for-mobile-only{
+    @include screenSize(90vw,auto);
+  }
+  //mobile(S)
+  @include for-mobileS-only{
+    @include screenSize(95vw,auto);
+  }
+  .title{
+    @include typography(28px, center, 1.4em,600);
+    padding: 1em 3em;
+    color: $color2;
+    //tablet
+    @include for-tablet-only{
+      font-size: 2.6vw;
+      padding: 1em 2em;
+    }
+    //mobile(M)
+    @include for-mobile-only{
+      font-size: 27px;
+      padding: 1em 3em;
+    }
+    //mobile(S)
+    @include for-mobileS-only{
+      font-size: 24px;
+      padding: 1em 2em;
+    }
+    //mobile(XS)
+    @include for-mobileXS-only{
+      font-size: 20px;
+      padding: 1em;
+    }
+  }
+  .form{
+    padding: 0 2em;
+    //tablet
+     @include for-tablet-only{
+      width: 100%;
+      padding: 0 1.5em;
+      }
+    &__field{
+      @include displayFlex(center,flex-start,column);
+      margin-bottom: .5em;
+      &-input{
+        @include screenSize(100%,45px);
+        padding: .5em;
+        @include typography(20px, left, 1.3em,400);
+        margin-bottom: .5em;
+        //tablet
+        @include for-tablet-only{
+          font-size: 14px;
+        }
+      }
+    }
+    &__buttonWrapper{
+      @include screenSize(100%,auto);
+      @include displayFlex(center,center,row);
+      margin: 2vh 0;
+      &-button{
+        @include screenSize(100%,auto);
+        border: 1px solid $color6;
+        font-size: 23px;
+        padding: .5em 0;
+        background-color: $color2;
+        color: $color1;
+        //tablet
+        @include for-tablet-only{
+          font-size: 1.8vw;
+          padding: 1em 0;
+        }
+        //mobile
+        @include for-mobile-only{
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
