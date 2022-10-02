@@ -7,18 +7,49 @@
   margin-top:1em;
   @include glassEffect();
   border-radius: 1em;
+  //tablet
+  @include for-tablet-only{
+    @include screenSize(100%,auto);
+    padding: 2em 0;
+  }
+  //mobile(S)
+  @include for-mobileS-only{
+    @include screenSize(100vw,100vh);
+    margin-top: 0;
+    border-radius: 0;
+  }
   &__content{
     @include screenSize(100%,auto);
     @include displayFlex(space-evenly, center, row);
+    //tablet(S)
+    @include for-tabletS-only{
+      @include displayFlex(center, center, column);
+    }
     &-logo{
       @include screenSize(45%,auto);
       @include displayFlex(center, center, column);
+      //tablet
+      @include for-tablet-only{
+        @include screenSize(50%,auto);
+      }
+      //tablet(S)
+      @include for-tabletS-only{
+        flex-direction: column-reverse;
+      }
       .image{
         @include screenSize(100%,auto);
         @include displayFlex(center, flex-end, row);
         transform: translateY(7%);
-        &-logo{
+        &__logo{
           width:100%;
+          //tablet
+          @include for-tablet-only{
+            width:60%;
+          }
+          //mobile(M)
+          @include for-mobile-only{
+            width:80%;
+          }
         }
       }
       .title{
@@ -27,10 +58,26 @@
         @include cardShadow();
         border: 5px double $color1;
         border-radius: .8em;
+        //tablet(S)
+        @include for-tabletS-only{
+          padding: 1em 2em;
+        }
+        //mobile(XS)
+        @include for-mobileXS-only{
+          padding: .8em 1.5em;
+        }
         h1{
           @include typography(5vw,center,1.4em,900);
           color: $color5;
-        }
+          //tablet(S)
+          @include for-tabletS-only{
+            font-size: 47px;
+          }
+          //mobile(XS)
+          @include for-mobileXS-only{
+            font-size:36px;
+          }
+          }
       }
 
     }
@@ -43,9 +90,19 @@
 .footer{
   @include screenSize(100vw,auto);
   @include displayFlex(center, center, row);
-  margin-top: .8em;
+  //mobile(XS)
+  @include for-mobileXS-only{
+    @include screenSize(80vw,auto);
+    margin: auto;
+  }
   &__copy{
       @include typography(1vw,center,1.2em,600);
+      margin-top: 1.2em;
       color: $color6;
+      //tablet(S)
+      @include for-tabletS-only{
+        font-size: 12px;
+        margin-top: 2em;
+      }
   }
 }
