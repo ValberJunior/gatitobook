@@ -1,13 +1,14 @@
 @import "../../../abstract/functions", "../../../abstract/variables", "../../../abstract/responsive";
 
 .container{
-  @include screenSize(500px,500px);
+  @include screenSize(500px,auto);
+  padding: 2em 0;
   @include displayFlex(center, center, column);
   @include cardShadow();
   background: $color1;
   //viewport
   @include for-viewport-only{
-    @include screenSize(450px,450px);
+    @include screenSize(450px,auto);
   }
   //tablet(S)
   @include for-tabletS-only{
@@ -16,11 +17,11 @@
   }
   //mobile(M)
   @include for-mobile-only{
-    @include screenSize(350px,350px);
+    @include screenSize(350px,auto);
   }
-  //mobile(XS)
-  @include for-mobileXS-only{
-    @include screenSize(250px,350px);
+  //mobile(S)
+  @include for-mobileS-only{
+    @include screenSize(95vw,auto);
   }
   .title{
     @include typography(38px, center, 1.4em,600);
@@ -88,5 +89,12 @@
         }
       }
     }
+  }
+  p{
+    margin-top: 1em;
+    .link{
+      color: $primary;
+      font-weight: 600;
+  }
   }
 }
