@@ -8,8 +8,13 @@ const routes: Routes = [{
 },
 {
   path:'home',
-  loadChildren:()=>import('./home/home.module').then( m => m.HomeModule),
-}];
+  loadChildren:()=>import('./home/home.module').then( m => m.HomeModule)
+},
+{
+  path: 'feed',
+  loadChildren: ()=> import('./feed/feed.module').then(m=>m.FeedModule)
+}
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

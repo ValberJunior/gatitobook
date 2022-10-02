@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/authentication/auth.service';
 import { ISignIn } from 'src/interfaces';
 
@@ -15,14 +16,14 @@ export class LoginComponent implements OnInit {
     password:""
   }
 
-  constructor(private authService : AuthService) { }
+  constructor(private authService : AuthService, private router: Router ) { }
 
   ngOnInit(): void {
   }
 
   login(){
    this.authService.authenticate(this.credential).subscribe(()=>{
-    console.log("autenicado com sucesso!")
+    this.router.navigate(['feed']);
    },(err)=>{
     alert("Usuário ou senha inválidos");
     console.log(err);
