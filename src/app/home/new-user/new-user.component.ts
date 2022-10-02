@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NewUserService } from './new-user.service';
+import { lowercaseValidator } from './validators/lowercase.validator';
 
 @Component({
   selector: 'app-new-user',
@@ -23,9 +24,9 @@ export class NewUserComponent implements OnInit {
       ]],
       fullName:['',[
         Validators.required,
-        Validators.minLength(4)
+        Validators.minLength(4),
       ]],
-      userName:[''],
+      userName:['', [lowercaseValidator]],
       password:[''],
     })
   }
