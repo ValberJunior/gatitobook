@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NewUserService } from './new-user.service';
 
 @Component({
@@ -17,8 +17,14 @@ export class NewUserComponent implements OnInit {
   //ciclo do angular que ocorre após a classe efetuar a injeção de todos os serviços e sua construção ser totalmente completa.
   ngOnInit(): void {
     this.newUserForm = this.formBuilder.group({
-      email:[''],
-      fullName:[''],
+      email:['',[
+        Validators.required,
+        Validators.email
+      ]],
+      fullName:['',[
+        Validators.required,
+        Validators.minLength(4)
+      ]],
       userName:[''],
       password:[''],
     })
