@@ -10,7 +10,7 @@ export class AuthService {
 
     //propertys
     credential : ISignIn = {
-      user: "",
+      userName: "",
       password:""
     }
 

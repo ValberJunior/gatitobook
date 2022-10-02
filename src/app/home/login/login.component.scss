@@ -57,8 +57,12 @@
       &-input{
         @include screenSize(100%,45px);
         padding: .5em;
-        @include typography(1.2vw, left, 1.3em,400);
+        @include typography(20px, left, 1.3em,400);
         margin-bottom: .5em;
+        //tablet
+        @include for-tablet-only{
+          font-size: 14px;
+        }
       }
     }
     &__buttonWrapper{
