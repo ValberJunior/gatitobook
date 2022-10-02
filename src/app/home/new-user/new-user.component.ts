@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NewUserService } from './new-user.service';
+import { UserExistsService } from './user-exists.service';
 import { lowercaseValidator } from './validators/lowercase.validator';
 
 @Component({
@@ -13,7 +14,11 @@ export class NewUserComponent implements OnInit {
   newUserForm! : FormGroup;
 
   //injetamos dentro do constructor
-  constructor(private formBuilder: FormBuilder, private newUserService : NewUserService) { }
+  constructor(
+                private formBuilder: FormBuilder,
+                private newUserService : NewUserService,
+                private userExistsService : UserExistsService
+                ) { }
 
   //ciclo do angular que ocorre após a classe efetuar a injeção de todos os serviços e sua construção ser totalmente completa.
   ngOnInit(): void {
@@ -26,7 +31,8 @@ export class NewUserComponent implements OnInit {
         Validators.required,
         Validators.minLength(4),
       ]],
-      userName:['', [lowercaseValidator]],
+      userName:['', [lowercaseValidator],
+      [this.userExistsService.userAlreadyExists()]],
       password:[''],
     })
   }
