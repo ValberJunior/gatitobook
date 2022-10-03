@@ -1,0 +1,20 @@
+<header class="header">
+  <nav class="header__navbar">
+    <div class="header__navbar-logo">
+      <img src="assets/images/logo.png" alt="gatito logo" class="image" />
+      <h2 class="logo">Gatitobook</h2>
+    </div>
+    <div *ngIf="user$ | async as user" class="header__navbar-userbar">
+      <div *ngIf="user.name;else login" class="session">
+        <i class="fa fa-user-circle session__icon"></i>
+        <a class="session__user">{{user.name}}</a>
+        <a (click)="logout()" class="session__option">Logout</a>
+      </div>
+    </div>
+  </nav>
+  <ng-template #login class="session">
+    <span>
+      <a [routerLink]="['']"  class="session__option">Login</a>
+    </span>
+  </ng-template>
+</header>
