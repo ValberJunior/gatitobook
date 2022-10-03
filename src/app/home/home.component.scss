@@ -3,6 +3,7 @@
 .container{
   @include screenSize(100vw,100vh);
   @include displayFlex(center, center, row);
+  position: relative;
   //tablet
   @include for-tablet-only{
     @include screenSize(100%,auto);
@@ -75,24 +76,5 @@
       @include screenSize(45%,auto);
       @include displayFlex(center, center, row);
     }
-  }
-}
-.footer{
-  @include screenSize(100vw,auto);
-  @include displayFlex(center, center, row);
-  //mobile(XS)
-  @include for-mobileXS-only{
-    @include screenSize(80vw,auto);
-    margin: auto;
-  }
-  &__copy{
-      @include typography(1vw,center,1.2em,600);
-      margin-top: 1.2em;
-      color: $color6;
-      //tablet
-      @include for-tablet-only{
-        font-size: 12px;
-        margin-top: 2em;
-      }
   }
 }
