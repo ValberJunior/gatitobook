@@ -1,0 +1,56 @@
+@import "../../../abstract/functions", "../../../abstract/variables", "../../../abstract/responsive";
+
+.container{
+  @include screenSize(100%,auto);
+  @include displayFlex(center, center, column);
+  background-color: $color1;
+  .message{
+    @include screenSize(100%,100vh);
+    @include displayFlex(center, center, row);
+    @include typography(1.2vw,center,1em,500);
+  }
+  .content{
+    @include screenSize(100%,auto);
+    padding: 3em 0;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 10px;
+    align-items: center;
+    justify-items: center;
+    //tablet(S)
+    @include for-tabletS-only{
+      grid-template-columns: repeat(2,1fr);
+    }
+    //mobile(S)
+    @include for-mobileS-only{
+      grid-template-columns: repeat(1,1fr);
+    }
+    .card{
+      @include screenSize(100%,auto);
+      &__details{
+        @include screenSize(100%,auto);
+        @include displayFlex(flex-start, center, row);
+        padding: .5em;
+        i{
+          @include screenSize(10%,auto);
+          @include displayFlex(center, center, row);
+          cursor: pointer;
+          font-size: 18px;
+          font-weight: 500;
+          //tablet
+          @include for-tablet-only{
+            width: 15%;
+          }
+          //mobile(S)
+          @include for-mobileS-only{
+            width: 10%;
+          }
+          //mobile(XS)
+          @include for-mobileS-only{
+            width: 15%;
+          }
+        }
+      }
+    }
+  }
+}

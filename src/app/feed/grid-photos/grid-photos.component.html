@@ -1,0 +1,21 @@
+<section class="container">
+  <p *ngIf="!items.length" class="message">
+    Desculpe, não há animais...
+  </p>
+  <div class="content">
+    <div *ngFor="let item of items">
+      <a [routerLink]="['/items', item.id]"></a>
+      <app-card class="content.card">
+        <app-card-image
+          [url]="item.url"
+          [desc]="item.description"
+          >
+        </app-card-image>
+       <div class="card__details">
+        <i aria-hidden="true" class="fa fa-heart-o faa-1x">{{item.likes}}</i>
+        <i aria-hidden="true" class="fa fa-comment-o fa-1x">{{item.comments}}</i>
+       </div>
+      </app-card>
+    </div>
+  </div>
+</section>
