@@ -3,8 +3,9 @@ import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Items } from 'src/utils';
+import { environment } from 'src/environments/environment';
 
-const API = 'http://localhost:300';
+const API = environment.apiURL;
 
 @Injectable({
   providedIn: 'root'
