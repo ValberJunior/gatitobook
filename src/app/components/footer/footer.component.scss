@@ -1,0 +1,24 @@
+@import "../../../abstract/functions", "../../../abstract/variables", "../../../abstract/responsive";
+
+.footer{
+  @include screenSize(100vw,auto);
+  @include displayFlex(center, center, row);
+  background-color: $color1;
+  position: absolute;
+  bottom:0;
+  //mobile(XS)
+  @include for-mobileXS-only{
+    @include screenSize(80vw,auto);
+    margin: auto;
+  }
+  &__copy{
+      @include typography(1vw,center,1.2em,600);
+      margin-top: 1.2em;
+      color: $color6;
+      //tablet
+      @include for-tablet-only{
+        font-size: 12px;
+        margin-top: 2em;
+      }
+  }
+}
