@@ -61,9 +61,15 @@
         padding: .5em;
         @include typography(20px, left, 1.3em,400);
         margin-bottom: .5em;
+        &::placeholder{
+          @include typography(20px, left, 1.3em,400);
+        }
         //tablet
         @include for-tablet-only{
           font-size: 14px;
+          &::placeholder{
+            font-size: 14px;
+          }
         }
       }
     }
