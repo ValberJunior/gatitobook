@@ -1,0 +1,12 @@
+@import "../../../abstract/functions, ../../variables, ../../responsive";
+
+.card{
+  padding: .5em;
+  &__title{
+    color :black;
+  }
+  &__content{
+    @include screenSize(100%,auto);
+    @include displayFlex(center, center, column);
+  }
+}
