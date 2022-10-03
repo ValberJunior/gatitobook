@@ -1,0 +1,5 @@
+@import "../../../abstract/functions", "../../../abstract/responsive", "../../../abstract/variables";
+
+.image{
+  @include screenSize(100%,auto);
+}
