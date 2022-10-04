@@ -1,6 +1,6 @@
 import { TokenService } from './../authentication/token.service';
 import { Observable } from 'rxjs';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Items } from 'src/utils';
 import { environment } from 'src/environments/environment';
@@ -18,17 +18,11 @@ export class ItemsService {
               ) { }
 
   userList(username:string):Observable<Items>{
-    const token = this.tokenService.returnToken();
-    const headers = new HttpHeaders().append('x-access-token',token);
-    return this.httpClient.get<Items>(`${API}/${username}/photos`,{
-      headers
-    });
+    return this.httpClient.get<Items>(`${API}/${username}/photos`);
   }
 
   searchById(id:number):Observable<IItem>{
-    const token = this.tokenService.returnToken();
-    const headers = new HttpHeaders().append('x-access-token',token);
-    return this.httpClient.get<IItem>(`${API}/photos/${id}`,{headers});
+    return this.httpClient.get<IItem>(`${API}/photos/${id}`);
   }
 
 }
