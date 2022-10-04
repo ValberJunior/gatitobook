@@ -1,0 +1,21 @@
+@import '../../../abstract/functions','../../../abstract//responsive','../../../abstract/variables';
+
+.container{
+  @include screenSize(100%,auto);
+  @include displayFlex(center, center,row);
+  .content{
+    @include screenSize(100%,100%);
+    padding: 5vh 0;
+    @include displayFlex(center, center, column);
+    &__card{
+      @include screenSize(100%,100%);
+      @include displayFlex(center, center, row);
+      &-image{
+        flex: 2;
+      }
+      &-desc{
+        flex:1;
+      }
+    }
+  }
+}
