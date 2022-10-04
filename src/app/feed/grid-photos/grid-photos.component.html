@@ -4,7 +4,7 @@
   </p>
   <div class="content">
     <div *ngFor="let item of items">
-      <a [routerLink]="['/items', item.id]"></a>
+    <a [routerLink]="['/feed', item.id]">
       <app-card class="content.card">
         <app-card-image
           [url]="item.url"
@@ -16,6 +16,7 @@
         <i aria-hidden="true" class="fa fa-comment-o fa-1x">{{item.comments}}</i>
        </div>
       </app-card>
+    </a>
     </div>
   </div>
 </section>
