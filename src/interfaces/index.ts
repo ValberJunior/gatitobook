@@ -26,3 +26,9 @@ export interface IItem{
   comments: number;
   userId: number
 }
+
+export interface IComments{
+  date: Date,
+  text: string,
+  userName: string
+}
