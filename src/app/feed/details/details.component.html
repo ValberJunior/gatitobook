@@ -2,20 +2,20 @@
 <section class="container">
   <div *ngIf="item$ | async as item" class="content">
     <div class="content__card">
-      <!-- fazer um flex row -->
       <div class="content__card-image">
-        <!-- 2 terços pra foto -->
         <app-card-image
           [url]="item.url"
           [desc]="item.description">
         </app-card-image>
       </div>
       <div class="content__card-desc">
-        <!-- colocar a descrição -->
         <small>
           <p>
             {{item.description}}
           </p>
+          <i (click)="like()" class="fa fa-heart-o fa-2x">{{item.likes}}</i>
+          <i class="fa fa-comment-o fa-2x">{{item.comments}}</i>
+          <i (click)="delete()" class="fa fa-trash-o fa-2x"></i>
         </small>
       </div>
     </div>
