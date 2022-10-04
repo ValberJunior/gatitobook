@@ -8,13 +8,15 @@ import { ListComponent } from './list/list.component';
 import { CardImageComponent } from './card-image/card-image.component';
 import { CardModule } from '../components/card/card.module';
 import { GridPhotosComponent } from './grid-photos/grid-photos.component';
+import { DetailsComponent } from './details/details.component';
 
 
 @NgModule({
   declarations: [
     ListComponent,
     CardImageComponent,
-    GridPhotosComponent
+    GridPhotosComponent,
+    DetailsComponent
   ],
   imports: [
     CommonModule,
