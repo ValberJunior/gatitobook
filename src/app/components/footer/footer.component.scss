@@ -2,17 +2,31 @@
 
 .footer{
   @include screenSize(100vw,auto);
-  @include displayFlex(center, center, row);
-  background-color: $color3;
+  @include displayFlex(center, center, column);
   //mobile(XS)
   @include for-mobileXS-only{
     @include screenSize(80vw,auto);
     margin: auto;
   }
+  &__back{
+    font-size: 2vw;
+    margin: 1.5em 0 1em 0;
+    color: $color6;
+    transition: all .6s linear;
+    &:hover{
+      transition: all .6s linear;
+      color: $color3;
+    }
+    //tablet
+    @include for-tablet-only{
+      font-size: 16px;
+      margin-top: 2em;
+    }
+  }
   &__copy{
       @include typography(.8vw,center,1.2em,600);
-      margin-top: 1.2em;
       color: $color6;
+      margin-top: 1.2em;
       //tablet
       @include for-tablet-only{
         font-size: 12px;
