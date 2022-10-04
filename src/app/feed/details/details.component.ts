@@ -20,7 +20,7 @@ export class DetailsComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.itemId = this.activatedRoute.snapshot.params['id']; //check
+    this.itemId = this.activatedRoute.snapshot.params['id'];
     this.item$ = this.itemsService.searchById(this.itemId);
   }
 
