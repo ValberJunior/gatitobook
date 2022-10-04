@@ -12,6 +12,7 @@ export class HeaderComponent implements OnInit {
   constructor(private userService : UserService, private router : Router) { }
 
   user$ = this.userService.returnUser();
+  mobileState : boolean = false;
 
   ngOnInit(): void {
   }
@@ -19,6 +20,10 @@ export class HeaderComponent implements OnInit {
   logout(){
     this.userService.Logout();
     this.router.navigate(['']);
+  }
+
+  mobile(){
+    return this.mobileState = !this.mobileState;
   }
 
 }

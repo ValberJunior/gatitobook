@@ -1,5 +1,5 @@
-import { IComments, IItem } from "src/interfaces";
+import { IComment, IItem } from "src/interfaces";
 
 export type Items = Array<IItem>
 
-export type Comments = Array<IComments>
+export type Comments = Array<IComment>

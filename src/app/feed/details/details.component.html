@@ -1,22 +1,28 @@
 <app-header></app-header>
 <section class="container">
-  <div *ngIf="item$ | async as item" class="content">
-    <div class="content__card">
-      <div class="content__card-image">
+  <div *ngIf="item$ | async as item" class="container__content">
+    <div class="card">
+      <div class="card__image">
         <app-card-image
           [url]="item.url"
           [desc]="item.description">
         </app-card-image>
       </div>
-      <div class="content__card-desc">
+      <div class="card__desc">
         <small>
           <p>
             {{item.description}}
           </p>
-          <i (click)="like()" class="fa fa-heart-o fa-2x">{{item.likes}}</i>
-          <i class="fa fa-comment-o fa-2x">{{item.comments}}</i>
-          <i (click)="delete()" class="fa fa-trash-o fa-2x"></i>
+          <div class="card__desc-options">
+            <i (click)="like()" class="fa fa-heart-o">{{item.likes}}</i>
+            <i class="fa fa-comment-o">{{item.comments}}</i>
+            <i (click)="delete()" class="fa fa-trash-o"></i>
+          </div>
         </small>
+        <app-comments [id]="item.id" *ngIf="item.allowComments; else warning"></app-comments>
+        <ng-template #warning>
+          <p>Comentários desativados</p>
+        </ng-template>
       </div>
     </div>
   </div>

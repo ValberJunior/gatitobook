@@ -9,17 +9,17 @@
     margin: auto;
   }
   &__back{
-    font-size: 2vw;
-    margin: 1.5em 0 1em 0;
+    font-size: 3vw;
+    margin: 1em 0 1em 0;
     color: $color6;
     transition: all .6s linear;
     &:hover{
       transition: all .6s linear;
-      color: $color3;
+      color: $color4;
     }
     //tablet
     @include for-tablet-only{
-      font-size: 16px;
+      font-size: 40px;
       margin-top: 2em;
     }
   }

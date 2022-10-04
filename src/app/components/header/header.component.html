@@ -4,6 +4,8 @@
       <img src="assets/images/logo.png" alt="gatito logo" class="image" />
       <h2 class="logo">Gatitobook</h2>
     </div>
+    <!-- mobile button -->
+    <button class="mobile-button"><i class="fa fa-align-justify" (click)="mobile()"></i></button>
     <div *ngIf="user$ | async as user" class="header__navbar-userbar">
       <div *ngIf="user.name;else login" class="session">
         <i class="fa fa-user-circle session__icon"></i>
@@ -18,3 +20,19 @@
     </span>
   </ng-template>
 </header>
+
+      <!-- mobile -->
+<div class="{{!mobileState ? 'mobile' : 'mobile-actived'}}">
+  <div *ngIf="user$ | async as user" class="mobile__userbar">
+    <div *ngIf="user.name;else login" class="session">
+      <span><i class="fa fa-user-circle icon"></i> <a class="user">{{user.name}}</a></span>
+      <a (click)="logout()" class="option">Logout</a>
+    </div>
+  </div>
+
+  <ng-template #login class="session">
+    <span>
+      <a [routerLink]="['']"  class="option">Login</a>
+    </span>
+  </ng-template>
+</div>

@@ -1,0 +1,29 @@
+<section class="comments">
+  <div *ngIf="comments$ | async as comments" class="comments__content">
+    <ul class="comments__content-list">
+      <li *ngFor="let comment of comments" class="item">
+         <p class="item__username">{{comment.userName}}</p>
+         <p class="item__text">{{comment.text}}</p>
+         <em class="item__date">{{comment.date | date: "dd-MM-yyy HH:mm"}}</em>
+      </li>
+    </ul>
+    <div class="comments__content-form">
+      <form [formGroup]="commentForm" (submit)="save()" class="form">
+          <div class="form__newComment">
+            <textarea formControlName="comment" class="form__newComment-textarea" rows="5">
+            </textarea>
+          </div>
+          <div class="form__buttonWrapper">
+            <button [disabled]="commentForm.invalid" class="form__buttonWrapper-button">
+              Publicar
+            </button>
+          </div>
+          <app-message
+           message="Tamanho máximo de caracteres excedido"
+           *ngIf="!!commentForm.get('comment')?.errors?.['maxlength']"
+           >
+          </app-message>
+      </form>
+    </div>
+  </div>
+<section>

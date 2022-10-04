@@ -1,0 +1,112 @@
+@import "../../../../abstract/functions","../../../../abstract/responsive","../../../../abstract//variables";
+
+.comments{
+  @include screenSize(100%,auto);
+  &__content{
+    @include screenSize(100%,47em);
+    //viewport
+    @include for-viewport-only{
+      height: 38em;
+    }
+    //tablet
+    @include for-tablet-only{
+      height: auto;
+    }
+    &-list{
+      @include screenSize(100%,70%);
+      @include resetList();
+      padding: 0 1em;
+      overflow-y: scroll;
+      //tablet
+      @include for-tablet-only{
+        padding: 0;
+        height: auto;
+        max-height: 70%;
+      }
+      .item{
+        margin-bottom: .2em;
+        border-radius: .5em;
+        padding: 1em;
+        background-color: #FFFFFF;
+        &__username{
+          @include typography(1vw,left,1em,500);
+          color: $primary;
+          //tablet
+          @include for-tablet-only{
+            font-size: 19px;
+          }
+        }
+        &__text{
+          @include typography(.8vw,left,.7em,400);
+          //tablet
+          @include for-tablet-only{
+            font-size: 16px;
+          }
+        }
+        &__date{
+          @include screenSize(100%,auto);
+          @include typography(.8vw,left,.7em,300);
+          @include displayFlex(flex-end, center, row);
+          color: $color6;
+          text-align: end;
+          //tablet
+          @include for-tablet-only{
+            font-size: 14px;
+          }
+        }
+      }
+    }
+    &-form{
+      @include screenSize(100%,30%);
+      @include displayFlex(center,center,row);
+      //tablet
+       @include for-tablet-only{
+        padding-top: 1em;
+       }
+      .form{
+        @include screenSize(95%,auto);
+        //tablet
+        @include for-tablet-only{
+          width: 100%;
+        }
+        &__newComment{
+          @include screenSize(100%,auto);
+          &-textarea{
+            @include screenSize(100%,auto);
+            padding: .5em;
+            font-size: 16px;
+          }
+        }
+        &__buttonWrapper{
+          @include screenSize(100%,auto);
+          @include displayFlex(center,center,row);
+          //tablet
+          @include for-tablet-only{
+            padding-top: .5em;
+          }
+          //mobile(S)
+          @include for-mobileS-only{
+            padding-top: 1.5em;
+          }
+          &-button{
+            @include screenSize(50%,auto);
+            padding: 1em 0;
+            background-color: $color4;
+            color: $color1;
+            outline: none;
+            border: 1px solid $color1;
+            border-radius: .3em;
+            //tablet
+            @include for-tablet-only{
+              font-size: 18px;
+            }
+            //mobile(S)
+            @include for-mobileS-only{
+              @include screenSize(100%,auto);
+            }
+          }
+        }
+      }
+    }
+  }
+}
