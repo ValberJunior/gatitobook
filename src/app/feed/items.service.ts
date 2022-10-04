@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Items } from 'src/utils';
 import { environment } from 'src/environments/environment';
+import { IItem } from 'src/interfaces';
 
 const API = environment.apiURL;
 
@@ -23,4 +24,11 @@ export class ItemsService {
       headers
     });
   }
+
+  searchById(id:number):Observable<IItem>{
+    const token = this.tokenService.returnToken();
+    const headers = new HttpHeaders().append('x-access-token',token);
+    return this.httpClient.get<IItem>(`${API}/photos/${id}`,{headers});
+  }
+
 }
