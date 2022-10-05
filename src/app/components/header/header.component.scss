@@ -76,7 +76,7 @@
       @include displayFlex(center,center,row);
       //tablet
         @include for-tablet-only{
-        @include screenSize(30%,auto);
+        @include screenSize(40%,auto);
       }
       //tablet(S)
       @include for-tabletS-only{
