@@ -72,7 +72,7 @@
 
     }
     &-userbar{
-      @include screenSize(20%,auto);
+      @include screenSize(25%,auto);
       @include displayFlex(center,center,row);
       //tablet
         @include for-tablet-only{
@@ -80,7 +80,7 @@
       }
       //tablet(S)
       @include for-tabletS-only{
-        @include screenSize(40%,auto);
+        @include screenSize(50%,auto);
       }
       //mobile(M)
       @include for-mobile-only{
@@ -89,35 +89,21 @@
       .session{
         @include screenSize(100%,auto);
         @include displayFlex(space-between,center,row);
-        &__user{
-          @include screenSize(40%,auto);
-          font-size: 20px;
-          color: $color2;
-          //viewport
-          @include for-viewport-only{
-            font-size: 1.5vw;
-          }
-          //tablet
-          @include for-tablet-only{
-            font-size: 20px;
-          }
-        }
-        &__icon{
-          font-size: 30px;
-          //viewport
-          @include for-viewport-only{
-            font-size: 2vw;
-          }
-          //tablet
-          @include for-tablet-only{
-            font-size: 30px;
-          }
-        }
         &__option{
-          @include screenSize(40%,auto);
+          @include screenSize(auto,auto);
           cursor: pointer;
           font-size: 20px;
-          color: $color2;
+          color: $color1;
+          margin: 0.5em;
+          @include displayFlex(center,center,row);
+          padding: .5em;
+          i{
+            margin: .2em;
+          }
+          &-btn{
+            background: $color7;
+            border-radius: .2em;
+          }
           //viewport
           @include for-viewport-only{
             font-size: 1.5vw;
@@ -139,14 +125,14 @@
    @include displayFlex(center, center, row);
    @include screenSize(100vw, auto);
    position: absolute;
-   top:-170px;
+   top:-260px;
    background: $color4;
    padding-top: 120px;
    padding-bottom: 2em;
    z-index: 99999;
    transition: all .5s ease-in-out;
    &__userbar{
-    @include screenSize(40%,auto);
+    @include screenSize(60%,auto);
     @include displayFlex(center,center,row);
     .session{
       @include screenSize(100%,auto);
@@ -155,6 +141,17 @@
       .user{ margin-left: .2em}
       a{
         padding: 1em 0 ;
+        color: $color3;
+      }
+      span{
+        margin-bottom: .8em;
+      }
+      .btn{
+        background: $color7;
+        border-radius: .2em;
+        padding: .5em 0;
+        width: 200px;
+        font-size: 20px;
       }
     }
    }
@@ -171,18 +168,5 @@
    padding-bottom: 2em;
    z-index: 99999;
    transition: all .5s ease-in;
-   &__userbar{
-    @include screenSize(40%,auto);
-    @include displayFlex(center,center,row);
-    .session{
-      @include screenSize(100%,auto);
-      @include displayFlex(center,center,column);
-      font-size: 20px;
-      .user{ margin-left: .2em}
-      a{
-        padding: 1.5em 0 ;
-      }
-    }
-   }
 }
 
