@@ -1,3 +1,4 @@
+import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { Observable, switchMap } from 'rxjs';
 import { UserService } from 'src/app/authentication/user/user.service';
@@ -11,19 +12,16 @@ import { ItemsService } from '../items.service';
 })
 export class ListComponent implements OnInit {
 
-  items$! : Observable<Items>;
+  items! : Items;
 
-  constructor(private userService : UserService,
-              private itemsService : ItemsService
-              ) { }
+  constructor( private activateRoute : ActivatedRoute ) { }
 
   ngOnInit(): void {
-    this.items$ = this.userService.returnUser().pipe(
-        switchMap(user =>{
-          const userName = user.name ?? '';
-          return this.itemsService.userList(userName);
-        })
-      )
+    this.activateRoute.params.subscribe(
+      param => {
+        this.items = this.activateRoute.snapshot.data['items'];
+      }
+    )
   }
 
 }

@@ -1,9 +1,7 @@
 <app-header></app-header>
 <div class="content">
-  <div *ngIf="items$ | async as items">
     <app-grid-photos
     [items]="items">
     </app-grid-photos>
-  </div>
 </div>
 <app-footer></app-footer>
