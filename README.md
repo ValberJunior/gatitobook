@@ -9,6 +9,11 @@
   <img src="https://cdn.iconscout.com/icon/free/png-64/angular-3-226070.png" alt="angular" width="50px" height="50px" > 
  </div>
  <br/> <br/>
+ - Adicionei a paleta de cores e estrutura de elementos do saudoso Orkut e também algumas mesclas de funcionalidades das redes sociais atuais.
+ - Api local consumida para : Listar fotos, apagar e adicionar fotos, autenticar e logar no sistema e criar usuário.
+ - Estilo estruturado com SASS, seguindo a nomenclatura de classes BEM.
+ - Design responsivo.
+ <br/><br/>
 
 ![screencapture-localhost-4200-home-2022-10-05-23_30_30](https://user-images.githubusercontent.com/84424883/194203570-b0f17c04-3409-4ac8-b535-7572561bb703.png)
 
