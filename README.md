@@ -4,4 +4,8 @@
 
 ![screencapture-localhost-4200-feed-2022-10-05-23_31_01 (1)](https://user-images.githubusercontent.com/84424883/194203585-5b510dfc-cd5a-418c-970e-ac1a1294d877.png)
 
+![screencapture-localhost-4200-feed-33-2022-10-05-23_56_32](https://user-images.githubusercontent.com/84424883/194203915-d32f67e2-34d7-4bea-8f2d-09eb953dfa35.png)
+
+
+
 ![screencapture-localhost-4200-feed-newPost-2022-10-05-23_32_27](https://user-images.githubusercontent.com/84424883/194203596-4820cef5-177d-49fc-a419-aad305668c32.png)
