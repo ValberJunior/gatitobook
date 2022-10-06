@@ -3,7 +3,7 @@
 .comments{
   @include screenSize(100%,auto);
   &__content{
-    @include screenSize(100%,47em);
+    @include screenSize(100%,auto);
     //viewport
     @include for-viewport-only{
       height: 38em;
@@ -13,7 +13,7 @@
       height: auto;
     }
     &-list{
-      @include screenSize(100%,70%);
+      @include screenSize(100%,32em);
       @include resetList();
       padding: 0 1em;
       overflow-y: scroll;
@@ -37,7 +37,7 @@
           }
         }
         &__text{
-          @include typography(.8vw,left,.7em,400);
+          @include typography(.8vw,left,1.4em,400);
           //tablet
           @include for-tablet-only{
             font-size: 16px;
@@ -57,7 +57,7 @@
       }
     }
     &-form{
-      @include screenSize(100%,30%);
+      @include screenSize(100%,20%);
       @include displayFlex(center,center,row);
       //tablet
        @include for-tablet-only{
@@ -71,45 +71,59 @@
         }
         &__newComment{
           @include screenSize(100%,auto);
+          margin: .7em 0 0 .8em;
+          position: relative;
+          //tablet
+          @include for-tablet-only{
+            margin-left: auto;
+          }
           &-textarea{
             @include screenSize(100%,auto);
-            padding: .5em;
+            padding: .6em;
             font-size: 16px;
             resize: none;
             outline: none;
             border: 2px solid $color3;
             border-radius: .8em;
           }
-        }
-        &__buttonWrapper{
-          @include screenSize(100%,auto);
-          @include displayFlex(center,center,row);
-          //tablet
-          @include for-tablet-only{
-            padding-top: .5em;
-          }
-          //mobile(S)
-          @include for-mobileS-only{
-            padding-top: 1.5em;
-          }
           &-button{
-            @include screenSize(50%,auto);
-            padding: 1em 0;
-            background-color: $color7;
-            color: $color1;
+            position: absolute;
+            bottom: 12%;
+            right: 2%;
+            border:none;
             outline: none;
-            border: 1px solid $color1;
-            border-radius: .3em;
-            //tablet
-            @include for-tablet-only{
-              font-size: 18px;
-            }
-            //mobile(S)
-            @include for-mobileS-only{
-              @include screenSize(100%,auto);
-            }
+            background: transparent;
           }
         }
+        // &__buttonWrapper{
+        //   @include screenSize(100%,auto);
+        //   @include displayFlex(center,center,row);
+        //   //tablet
+        //   @include for-tablet-only{
+        //     padding-top: .5em;
+        //   }
+        //   //mobile(S)
+        //   @include for-mobileS-only{
+        //     padding-top: 1.5em;
+        //   }
+        //   &-button{
+        //     @include screenSize(50%,auto);
+        //     padding: 1em 0;
+        //     background-color: $color7;
+        //     color: $color1;
+        //     outline: none;
+        //     border: 1px solid $color1;
+        //     border-radius: .3em;
+        //     //tablet
+        //     @include for-tablet-only{
+        //       font-size: 18px;
+        //     }
+        //     //mobile(S)
+        //     @include for-mobileS-only{
+        //       @include screenSize(100%,auto);
+        //     }
+        //   }
+        // }
       }
     }
   }

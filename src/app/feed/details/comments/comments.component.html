@@ -12,12 +12,12 @@
           <div class="form__newComment">
             <textarea formControlName="comment" class="form__newComment-textarea" rows="5">
             </textarea>
-          </div>
-          <div class="form__buttonWrapper">
-            <button [disabled]="commentForm.invalid" class="form__buttonWrapper-button">
-              Publicar
+            <button [disabled]="commentForm.invalid" class="form__newComment-button">
+              <img src="../../../../assets/icons/write.png" alt="write comment" class="comment">
             </button>
           </div>
+          <!-- <div class="form__buttonWrapper">
+          </div> -->
           <app-message
            message="Tamanho máximo de caracteres excedido"
            *ngIf="!!commentForm.get('comment')?.errors?.['maxlength']"

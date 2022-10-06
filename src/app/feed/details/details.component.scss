@@ -8,6 +8,7 @@
       }
     &__content{
       @include screenSize(100%,auto);
+      margin: 10vh 0;
       .card{
         @include screenSize(100%,auto);
         @include displayFlex(center,flex-start, row);

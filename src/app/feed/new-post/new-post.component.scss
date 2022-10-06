@@ -111,6 +111,13 @@
         }
         }
       }
+      .animation{
+        width: 80%;
+        @include displayFlex(center,center, row);
+        &__img{
+          width:100%;
+        }
+      }
     }
   }
 }

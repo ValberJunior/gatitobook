@@ -10,9 +10,14 @@
       </div>
       <div class="card__desc">
         <small>
-          <p class="card__desc-text" *ngIf="item.description !== ''">
+          <p class="card__desc-text" *ngIf="item.description;else noDescription">
             {{item.description}}
           </p>
+          <ng-template #noDescription >
+            <p class="card__desc-text">
+              Sem descrição adicionada ...
+            </p>
+          </ng-template>
           <div class="card__desc-options">
             <span><img src="../../../assets/icons/love.png" alt="like icon" class="icon"  (click)="like()">{{item.likes}}</span>
             <span><img src="../../../assets/icons/comment.png" alt="like icon" class="icon" >{{item.comments}}</span>
