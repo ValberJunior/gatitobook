@@ -10,18 +10,18 @@
       </div>
       <div class="card__desc">
         <small>
-          <p>
+          <p class="card__desc-text" *ngIf="item.description !== ''">
             {{item.description}}
           </p>
           <div class="card__desc-options">
-            <i (click)="like()" class="fa fa-heart-o">{{item.likes}}</i>
-            <i class="fa fa-comment-o">{{item.comments}}</i>
-            <i (click)="delete()" class="fa fa-trash-o"></i>
+            <span><img src="../../../assets/icons/love.png" alt="like icon" class="icon"  (click)="like()">{{item.likes}}</span>
+            <span><img src="../../../assets/icons/comment.png" alt="like icon" class="icon" >{{item.comments}}</span>
+            <span><img src="../../../assets/icons/delete.png" alt="like icon" class="icon" (click)="delete()"></span>
           </div>
         </small>
         <app-comments [id]="item.id" *ngIf="item.allowComments; else warning"></app-comments>
         <ng-template #warning>
-          <p>Comentários desativados</p>
+          <p class="card__desc-disableComments">Comentários desativados</p>
         </ng-template>
       </div>
     </div>

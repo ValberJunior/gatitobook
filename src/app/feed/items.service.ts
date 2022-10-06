@@ -33,11 +33,23 @@ export class ItemsService {
   like(id: number):Observable<boolean>{
     return this.httpClient.post(`${API}/photos/${id}/like`,{},
     { observe: 'response'}).pipe(
-      map(() => true),  //check
+      map(() => true),
       catchError((error)=>{
         return error.status === NOT_MODIFIED ? of(false) : throwError(()=> new Error (error)); //check
       })
     )
   }
+
+  upload(description: string, allowComments: boolean, imageFile: File){
+      const formData = new FormData();
+      formData.append('description',description);
+      formData.append('allowComments',allowComments ? 'true' : 'false');
+      formData.append('imageFile',imageFile);
+
+     return this.httpClient.post(`${API}/photos/upload`, formData, {
+            observe: 'events',
+            reportProgress: true
+          });
+      }
 
 }

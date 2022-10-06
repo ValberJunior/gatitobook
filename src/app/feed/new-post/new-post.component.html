@@ -1,0 +1,71 @@
+<div class="container">
+  <form [formGroup]="formItem" class="form" (submit)="upload()">
+    <div class="form__left">
+      <div *ngIf="!preview; else previewImage" class="form__left-preview">
+        <button
+          type="button"
+          (click)="fileInput.click()"
+          class="uploadButton"
+        >
+          <img src="../../../assets/icons/photos.png" alt="add image icon" class="addImage">
+        </button>
+        <input
+          #fileInput
+          type="file"
+          hidden
+          formControlName="file"
+          accept="image/*"
+          (change)="saveFile($event.target)"
+        />
+        <app-message
+          message="Por favor selecione a foto"
+          *ngIf="!!formItem.get('file')?.errors?.['required']"
+        ></app-message>
+      </div>
+      <ng-template #previewImage>
+        <app-card-image [url]="preview" title="Preview"></app-card-image>
+      </ng-template>
+    </div>
+    <div class="form__right">
+      <div class="form__right-field">
+        <textarea
+          formControlName="description"
+          class="textarea"
+          placeholder="Adicione uma descrição :)"
+          rows="5"
+        ></textarea>
+        <app-message
+          message="Tamanho máximo do campo é 300 caracteres"
+          *ngIf="!!formItem.get('description')?.errors?.['maxlength']"
+        ></app-message>
+      </div>
+
+      <div class="form__right-field">
+        <label class="option">
+          Permite comentário
+          <input type="checkbox" formControlName="allowComments" />
+        </label>
+      </div>
+
+      <div *ngIf="!percentage; else uploaddiv" class="form__right-buttons">
+        <button
+          [disabled]="formItem.invalid"
+          type="submit"
+          class="send"
+        >
+          Enviar
+        </button>
+
+        <a href="/feed" class="cancel"
+          >Cancelar</a
+        >
+      </div>
+
+      <ng-template #uploaddiv>
+        <div class="text-center display-4">
+          Percentual de upload {{ percentage }} %
+        </div>
+      </ng-template>
+    </div>
+  </form>
+</div>

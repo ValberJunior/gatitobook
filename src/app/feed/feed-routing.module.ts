@@ -5,6 +5,7 @@ import { ListComponent } from './list/list.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ListResolver } from './list/list.resolver';
+import { NewPostComponent } from './new-post/new-post.component';
 
 const routes: Routes = [
   {
@@ -13,6 +14,10 @@ const routes: Routes = [
     resolve: {
       items : ListResolver
     }
+  },
+  {
+    path:'newPost',
+    component: NewPostComponent
   },
   {
     path: ':id',

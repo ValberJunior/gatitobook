@@ -11,7 +11,7 @@
   }
   .content{
     @include screenSize(100%,auto);
-    padding: 3em 0;
+    padding: 6em 0;
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-gap: 10px;
@@ -31,8 +31,8 @@
         @include screenSize(100%,auto);
         @include displayFlex(flex-start, center, row);
         padding: .5em;
-        i{
-          @include screenSize(10%,auto);
+        span{
+          @include screenSize(15%,auto);
           @include displayFlex(center, center, row);
           cursor: pointer;
           font-size: 18px;
@@ -48,6 +48,10 @@
           //mobile(XS)
           @include for-mobileS-only{
             width: 15%;
+          }
+          .icon{
+            @include screenSize(30px,30px);
+            margin-right: .3em;
           }
         }
       }

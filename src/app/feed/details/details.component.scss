@@ -34,6 +34,19 @@
           @include for-tablet-only{
             padding-bottom: 3em;
           }
+          &-text{
+              margin: 0 0em 1em 1em;
+              border-radius: 1.5em 1.5em 1.5em 0;
+              padding: 2em;
+              background-color: $color3;
+                @include typography(.8vw,left,.7em,400);
+                //tablet
+                @include for-tablet-only{
+                  font-size: 16px;
+                  margin: 1em 1em 0 0;
+                  border-radius:  0 1.5em 1.5em 1.5em;
+                }
+          }
           &-options{
             @include screenSize(100%,2.5em);
             @include displayFlex(center, flex-start, row);
@@ -50,10 +63,37 @@
               @include displayFlex(center, center, row);
             }
             }
-            i{
-              margin: 0 .4em;
-              cursor: pointer;
+          &-disableComments{
+            @include screenSize(100%,20vh);
+            @include displayFlex(center, center,row);
+            font-size: 18px;
           }
+            span{
+              @include screenSize(15%,auto);
+              @include displayFlex(center, center, row);
+              cursor: pointer;
+              font-size: 18px;
+              font-weight: 500;
+              //tablet
+              @include for-tablet-only{
+                width: 15%;
+              }
+              //mobile(S)
+              @include for-mobileS-only{
+                width: 10%;
+              }
+              //mobile(XS)
+              @include for-mobileS-only{
+                width: 15%;
+              }
+              .icon{
+                @include screenSize(30px,30px);
+                margin-right: .3em;
+                &:hover{
+                  @include pulseAnimation();
+                }
+              }
+            }
         }
       }
     }

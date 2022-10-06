@@ -1,0 +1,116 @@
+@import "../../../abstract/functions","../../../abstract//responsive","../../../abstract/variables";
+
+.container{
+  @include screenSize(100vw, 100vh);
+  @include displayFlex(center, center,row);
+  .form{
+    @include screenSize(80%,auto);
+    @include displayFlex(center, center,row);
+    background-color: $color8;
+    @include cardShadow();
+    padding: 3em;
+    border-radius: .8em;
+    //tablet
+    @include for-tablet-only{
+      width: 95%;
+      flex-direction: column
+    }
+    &__left{
+      @include screenSize(50%,auto);
+      //tablet
+      @include for-tablet-only{
+        width: 100%;
+      }
+      &-preview{
+        @include screenSize(100%,auto);
+        @include displayFlex(center, center,column);
+        .uploadButton{
+          background-color: transparent;
+          @include screenSize(40%,auto);
+          outline: none;
+          padding: 2em;
+          border-radius: .8em;
+          border: none;
+          margin-bottom: 1em;
+          .addImage{
+            @include screenSize(100%,auto);
+          }
+        }
+      }
+    }
+    &__right{
+      @include screenSize(50%,auto);
+      padding: 2em;
+      //tablet
+      @include for-tablet-only{
+        width: 100%;
+      }
+      &-field{
+        @include screenSize(100%,auto);
+        @include displayFlex(center, flex-start,column);
+        //tablet
+        @include for-tablet-only{
+          @include displayFlex(center,center,column);
+        }
+        .textarea{
+          @include screenSize(100%,auto);
+          background-color: $color8;
+          outline: none;
+          border: 2px solid $color3;
+          border-radius: .8em;
+          resize: none;
+          padding: .5em;
+          //tablet
+          @include for-tablet-only{
+            width: 350px
+          }
+        }
+        .option{
+          margin: 1em 0;
+          font-size: 17px;
+        }
+      }
+      &-buttons{
+        @include screenSize(100%,auto);
+        @include displayFlex(flex-start,center,row);
+        //tablet
+        @include for-tablet-only{
+          @include displayFlex(center,center,row);
+          flex-wrap: wrap;
+        }
+        .send{
+          @include screenSize(30%,auto);
+          @include displayFlex(center,center,row);
+          font-size: 19px;
+          padding: .4em;
+          border: none;
+          outline: none;
+          background-color: $color7;
+          color: $color1;
+          margin-right: .6em;
+          //tablet
+           @include for-tablet-only{
+            width: 150px;
+            margin-bottom: .5em;
+          }
+        }
+        .cancel{
+          @include screenSize(30%,auto);
+          @include displayFlex(center,center,row);
+          font-size: 19px;
+          padding: .4em;
+          border: none;
+          outline: none;
+          background-color: $color6;
+          color: $color1;
+          margin-right: .6em;
+          //tablet
+          @include for-tablet-only{
+            width: 150px;
+            margin-bottom: .5em;
+        }
+        }
+      }
+    }
+  }
+}

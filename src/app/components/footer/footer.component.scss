@@ -3,6 +3,7 @@
 .footer{
   @include screenSize(100vw,auto);
   @include displayFlex(center, center, column);
+  background-color: $color4;
   //mobile(XS)
   @include for-mobileXS-only{
     @include screenSize(80vw,auto);
