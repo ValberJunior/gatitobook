@@ -1,3 +1,15 @@
+# Projeto Gatitobook
+##  Curso Alura - Angular: Controle do fluxo de navegações e boas práticas em arquitetura e formulários
+
+### Tecnologias utilizadas:
+<div style="display=inline-block">
+         <img src="https://cdn.iconscout.com/icon/free/png-64/html5-2038876-1720089.png" alt="html"width="50px" height="50px" >
+  <img src="https://cdn.iconscout.com/icon/free/png-64/sass-2752078-2284895.png" alt="sass" width:"50px" height="50px"/>
+  <img src="https://cdn.iconscout.com/icon/free/png-64/typescript-1174965.png" alt="typescript" width="50px" height="50px" > 
+  <img src="https://cdn.iconscout.com/icon/free/png-64/angular-3-226070.png" alt="angular" width="50px" height="50px" > 
+ </div>
+ <br/> <br/>
+
 ![screencapture-localhost-4200-home-2022-10-05-23_30_30](https://user-images.githubusercontent.com/84424883/194203570-b0f17c04-3409-4ac8-b535-7572561bb703.png)
 
 ![screencapture-localhost-4200-home-newuser-2022-10-05-23_30_45](https://user-images.githubusercontent.com/84424883/194203577-b9ca1a82-b7c9-43b8-a30a-a346ed6a291a.png)
