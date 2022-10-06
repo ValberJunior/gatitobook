@@ -10,7 +10,8 @@
  </div>
  <br/> <br/>
  - Adicionei a paleta de cores e estrutura de elementos do saudoso Orkut e também algumas mesclas de funcionalidades das redes sociais atuais.<br/>
- - Api local consumida para : Listar fotos, apagar e adicionar fotos, autenticar e logar no sistema e criar usuário.<br/>
+ - Api local consumida para : 
+  <ul> <li>Listar fotos,</li><li> apagar e adicionar fotos,</li><li> autenticar e logar no sistema</li><li> e criar usuário.</li><ul><br/>
  - Estilo estruturado com SASS, seguindo a nomenclatura de classes BEM.<br/>
  - Design responsivo.
  <br/><br/>
